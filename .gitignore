@@ -1,0 +1,17 @@
+# Dependências
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Diretórios de build
+dist/
+build/
+
+# Sistema do macOS
+.DS_Store
+
+# Editor configs
+.vscode/
+.idea/

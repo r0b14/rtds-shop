@@ -1,19 +1,35 @@
-import React from 'react'
+import { useCart } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
-interface ProductCardProps {
+interface Product {
+  id: number
   title: string
   price: number
   thumbnail: string
 }
 
-function ProductCard({ title, price, thumbnail }: ProductCardProps) {
+interface ProductCardProps {
+  product: Product
+}
+
+export default function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart()
+
   return (
-    <div className="border rounded p-3 shadow-sm flex flex-col items-center">
-      <img src={thumbnail} alt={title} className="w-32 h-32 object-cover mb-2" />
-      <h3 className="font-semibold">{title}</h3>
-      <p>R${price}</p>
+    <div className="bg-white p-4 shadow-md rounded-lg hover:shadow-xl transition transform hover:scale-105">
+      <Link to={`/product/${product.id}`}>
+        <img src={product.thumbnail} alt={product.title} className="w-full h-48 object-cover rounded-md" />
+      </Link>
+      <Link to={`/product/${product.id}`} className="block mt-2">
+        <h2 className="text-lg font-semibold text-gray-800 hover:underline">{product.title}</h2>
+      </Link>
+      <p className="text-gray-700 text-lg font-bold">${product.price}</p>
+      <button
+        className="bg-black text-white px-4 py-2 mt-2 w-full rounded-md hover:bg-gray-800 transition"
+        onClick={() => addToCart(product)}
+      >
+        Adicionar ao Carrinho
+      </button>
     </div>
   )
 }
-
-export default ProductCard

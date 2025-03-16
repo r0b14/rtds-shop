@@ -11,55 +11,7 @@ export default function EcommercePage() {
         </a>
       </div>
 
-      {/* Navbar principal */}
-      <nav className="flex items-center justify-between px-8 py-4 border-b">
-        <div className="text-2xl font-bold tracking-wide">SHOP.CO</div>
-        <div className="flex items-center space-x-8">
-          <ul className="flex space-x-6 text-sm">
-            <li>
-              <a href="#" className="hover:underline">
-                Shop
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                On Sale
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                New Arrivals
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Brands
-              </a>
-            </li>
-          </ul>
-          <div>
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="border rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-          </div>
-          <div className="flex items-center space-x-4">
-            <button className="relative">
-              {/* Ícone de carrinho (exemplo) */}
-              <span className="material-icons text-2xl">shopping_cart</span>
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                3
-              </span>
-            </button>
-            <button>
-              {/* Ícone de usuário (exemplo) */}
-              <span className="material-icons text-2xl">person_outline</span>
-            </button>
-          </div>
-        </div>
-      </nav>
-
+      
       {/* Breadcrumb */}
       <div className="px-8 py-2 text-sm text-gray-500">
         Home &gt; <span className="text-black">Casual</span>

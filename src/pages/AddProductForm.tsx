@@ -1,25 +1,25 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { addProduct } from '../services/api'
-import { Product } from '../types/product'
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from 'yup'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { addProduct } from "../services/api";
+import { Product } from "../types/product";
 
-// Definindo o schema de validação com Yup
-const schema = yup.object().shape({
-  title: yup.string().required('O título é obrigatório'),
-  price: yup
-    .number()
-    .typeError('O preço precisa ser um número')
-    .required('Preço é obrigatório'),
-})
+// // Definindo o schema de validação com Yup
+// const schema = yup.object().shape({
+//   title: yup.string().required("O título é obrigatório"),
+//   price: yup
+//     .number()
+//     .typeError("O preço precisa ser um número")
+//     .required("Preço é obrigatório"),
+// });
 
 type FormInputs = {
-  title: string
-  price: number
-}
+  title: string;
+  price: number;
+};
 
 export function AddProductForm() {
   const {
@@ -29,16 +29,16 @@ export function AddProductForm() {
     reset,
   } = useForm<FormInputs>({
     resolver: yupResolver(schema),
-  })
+  });
 
   async function onSubmit(data: FormInputs) {
     try {
       // Chamamos a função de criação
-      const newProd = await addProduct(data as Partial<Product>)
-      toast.success(`Produto criado! ID: ${newProd.id}`)
-      reset() // Limpa o formulário
+      const newProd = await addProduct(data as Partial<Product>);
+      toast.success(`Produto criado! ID: ${newProd.id}`);
+      reset(); // Limpa o formulário
     } catch (err) {
-      toast.error('Falha ao criar produto.')
+      toast.error("Falha ao criar produto.");
     }
   }
 
@@ -51,12 +51,10 @@ export function AddProductForm() {
           <input
             type="text"
             className="border border-gray-300 w-full p-2 rounded"
-            {...register('title')}
+            {...register("title")}
           />
           {errors.title && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.title.message}
-            </p>
+            <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
           )}
         </div>
         <div>
@@ -64,12 +62,10 @@ export function AddProductForm() {
           <input
             type="number"
             className="border border-gray-300 w-full p-2 rounded"
-            {...register('price', { valueAsNumber: true })}
+            {...register("price", { valueAsNumber: true })}
           />
           {errors.price && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.price.message}
-            </p>
+            <p className="text-red-500 text-sm mt-1">{errors.price.message}</p>
           )}
         </div>
 
@@ -81,5 +77,5 @@ export function AddProductForm() {
         </button>
       </form>
     </div>
-  )
+  );
 }

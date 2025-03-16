@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useCart } from '../context/CartContext'
+import Footer from "../components/Footer";
 
 interface Product {
   id: number
@@ -107,6 +108,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       >
         Add to Cart
       </button>
+      <Footer />
     </div>
   )
 }

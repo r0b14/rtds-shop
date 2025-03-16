@@ -8,6 +8,7 @@ import {
 import { Product } from "../types/product";
 import Breadcrumb from "../components/Breadcrumb";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -136,6 +137,7 @@ export const ProductsPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

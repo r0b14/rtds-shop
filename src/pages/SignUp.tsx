@@ -84,16 +84,16 @@ export default function Signup() {
         <div className="hidden md:block md:w-1/2">
           <img
             src="https://via.placeholder.com/400"
-            alt="Signup"
+            alt="Cadastro"
             className="object-cover w-full h-full rounded-l-lg"
           />
         </div>
         <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">Sign up</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center">Cadastre-se</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4 flex space-x-4">
               <div className="w-1/2">
-                <label className="block text-gray-700">First Name</label>
+                <label className="block text-gray-700">Primeiro Nome</label>
                 <input
                   type="text"
                   value={firstName}
@@ -103,7 +103,7 @@ export default function Signup() {
                 />
               </div>
               <div className="w-1/2">
-                <label className="block text-gray-700">Last Name</label>
+                <label className="block text-gray-700">Último Nome</label>
                 <input
                   type="text"
                   value={lastName}
@@ -115,7 +115,7 @@ export default function Signup() {
             </div>
             <div className="mb-4 flex space-x-4">
               <div className="w-1/2">
-                <label className="block text-gray-700">Age</label>
+                <label className="block text-gray-700">Idade</label>
                 <input
                   type="number"
                   value={age}
@@ -127,7 +127,7 @@ export default function Signup() {
                 />
               </div>
               <div className="w-1/2">
-                <label className="block text-gray-700">Username</label>
+                <label className="block text-gray-700">Usuário</label>
                 <input
                   type="text"
                   value={username}
@@ -138,7 +138,7 @@ export default function Signup() {
               </div>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700">Email address</label>
+              <label className="block text-gray-700">Endereço de Email</label>
               <input
                 type="email"
                 value={email}
@@ -148,7 +148,7 @@ export default function Signup() {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-700">Password</label>
+              <label className="block text-gray-700">Senha</label>
               <input
                 type="password"
                 value={password}
@@ -166,13 +166,13 @@ export default function Signup() {
                 required
               />
               <label className="text-gray-700">
-                I agree with{" "}
+                Eu concordo com a{" "}
                 <a href="#" className="text-gray-900 hover:underline">
-                  Privacy Policy
+                  Política de Privacidade
                 </a>{" "}
-                and{" "}
+                e os{" "}
                 <a href="#" className="text-gray-900 hover:underline">
-                  Terms of Use
+                  Termos de Uso
                 </a>
               </label>
             </div>
@@ -180,13 +180,13 @@ export default function Signup() {
               type="submit"
               className="w-full bg-gray-900 text-white py-2 rounded-md hover:bg-gray-700 transition"
             >
-              Sign Up
+              Cadastrar
             </button>
           </form>
           <p className="mt-4 text-center">
-            Already have an account?{" "}
+            Já possui uma conta?{" "}
             <Link to="/login" className="text-gray-900 hover:underline">
-              Sign in
+              Entrar
             </Link>
           </p>
         </div>

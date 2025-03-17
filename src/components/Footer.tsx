@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo e redes sociais */}
         <div>
-          <h3 className="text-2xl font-bold">SHOP.CO</h3>
+          <h3 className="text-2xl font-bold">RTDS SHOP</h3>
           <p className="text-gray-600 mt-2 text-sm">
             Temos roupas que combinam com o seu estilo e que você se orgulha de usar. De mulheres a homens.
           </p>
@@ -70,7 +70,7 @@ export default function Footer() {
 
       {/* Rodapé inferior */}
       <div className="border-t border-gray-300 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-600 max-w-7xl mx-auto px-6">
-        <p>Shop.co © 2000-2023. Todos os Direitos Reservados</p>
+        <p>rtds shop © 2000-2025. Todos os Direitos Reservados</p>
       </div>
     </footer>
   )

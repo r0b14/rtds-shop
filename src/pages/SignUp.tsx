@@ -79,15 +79,15 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div className="w-full flex justify-center mb-6">
+        <img
+          src="./src/images/rtds shop.png"
+          alt="Cadastro"
+          className="object-cover w-32 h-32"
+        />
+      </div>
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-4xl">
-        <div className="hidden md:block md:w-1/2">
-          <img
-            src="https://via.placeholder.com/400"
-            alt="Cadastro"
-            className="object-cover w-full h-full rounded-l-lg"
-          />
-        </div>
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Cadastre-se</h2>
           <form onSubmit={handleSubmit}>

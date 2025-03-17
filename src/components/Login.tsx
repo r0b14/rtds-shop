@@ -45,15 +45,17 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-4xl">
-        <div className="hidden md:block md:w-1/2">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div className="flex items-center justify-center w-full max-w-4xl mb-8">
+        <div className="hidden md:flex md:w-1/2 items-center justify-center">
           <img
-            src="https://via.placeholder.com/400"
+            src="./src/images/rtds shop.png"
             alt="Login"
-            className="object-cover w-full h-full rounded-l-lg"
+            className="object-cover w-3/4 h-auto rounded-lg"
           />
         </div>
+      </div>
+      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-4xl">
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
           <form onSubmit={handleSubmit}>

@@ -49,7 +49,7 @@ export default function Login() {
       <div className="flex items-center justify-center w-full max-w-4xl mb-8">
         <div className="hidden md:flex md:w-1/2 items-center justify-center">
           <img
-            src="./src/images/rtds shop.png"
+            src="https://i.imgur.com/l9VxiDl.png"
             alt="Login"
             className="object-cover w-3/4 h-auto rounded-lg"
           />

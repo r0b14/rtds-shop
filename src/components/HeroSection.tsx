@@ -22,7 +22,7 @@ export default function HeroSection() {
       </div>
       <div className="md:w-1/2">
         <img
-          src="https://media.discordapp.net/attachments/1350669777760292915/1350673596904771605/Rectangle_2.png?ex=67d7984f&is=67d646cf&hm=534a67956770c4d457492a4427c581ef5a2dfddecb27b3c3f8ea26ef2cd69f03&=&format=webp&quality=lossless&width=1738&height=800"
+          src="https://i.imgur.com/6G5SG4n.png"
           alt="Banner de Moda"
           className="w-full h-full object-cover"
         />

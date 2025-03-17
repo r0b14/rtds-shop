@@ -82,7 +82,7 @@ export default function Signup() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <div className="w-full flex justify-center mb-6">
         <img
-          src="./src/images/rtds shop.png"
+          src="https://i.imgur.com/l9VxiDl.png"
           alt="Cadastro"
           className="object-cover w-32 h-32"
         />

@@ -7,7 +7,7 @@ const reviews = [
 export default function ReviewsSection() {
   return (
     <section className="mt-12">
-      <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
+      <h2 className="text-2xl font-bold mb-4">Avaliações de clientes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {reviews.map((review) => (
           <div key={review.id} className="border p-4 rounded-lg shadow-md">

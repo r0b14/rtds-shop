@@ -46,17 +46,16 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         quantity,
         thumbnail: "",
       });
-      alert("Product added to cart successfully!");
+      alert("Produto adicionado ao carrinho com sucesso!");
       window.location.href = "/cart";
     } catch (error) {
       console.error("Failed to add product to cart:", error);
-      alert("Failed to add product to cart. Please try again.");
+      alert("Falha ao adicionar produto ao carrinho. Tente novamente.");
     }
   };
 
   return (
     <div className="space-y-6">
-      {/* <ProductImage image={product.images[0]} /> */}
       {/* Nome do Produto */}
       <h1 className="text-3xl font-extrabold">{product.title}</h1>
 
@@ -84,7 +83,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       {/* Seleção de Cores */}
       <div>
-        <span className="text-gray-700 font-semibold">Select Colors:</span>
+        <span className="text-gray-700 font-semibold">Selecione as cores:</span>
         <div className="flex space-x-2 mt-2">
           {product.colors &&
             product.colors.length > 0 &&
@@ -103,7 +102,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       {/* Seleção de Tamanho */}
       <div>
-        <span className="text-gray-700 font-semibold">Choose Size:</span>
+        <span className="text-gray-700 font-semibold">Escolha o tamanho:</span>
         <div className="flex space-x-3 mt-2">
           {product.sizes &&
             product.sizes.length > 0 &&
@@ -125,7 +124,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       {/* Seleção de Quantidade */}
       <div className="flex items-center space-x-4">
-        <span className="text-gray-700 font-semibold">Quantity:</span>
+        <span className="text-gray-700 font-semibold">Quantidade:</span>
         <div className="flex items-center border px-3 py-1 rounded-md">
           <button
             className="text-gray-600 text-lg"
@@ -148,7 +147,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         className="bg-black text-white px-6 py-3 w-full rounded-md hover:bg-gray-800 transition"
         onClick={handleAddToCart}
       >
-        Add to Cart
+        Adicionar ao Carrinho
       </button>
     </div>
   );

@@ -42,8 +42,8 @@ export function Home() {
       <HeroSection />
       <BrandSection />
       <main className="max-w-7xl mx-auto px-6 py-12">
-        <ProductGrid title="New Arrivals" products={products.slice(0, 4)} />
-        <ProductGrid title="Top Selling" products={products.slice(4, 8)} />
+        <ProductGrid title="Novidades" products={products.slice(0, 4)} />
+        <ProductGrid title="Mais Vendidos" products={products.slice(4, 8)} />
 
         <div className="flex justify-center mt-12">
           <button

@@ -3,6 +3,7 @@ import { useProducts } from '../hooks/useProducts'
 import { updateProduct, deleteProduct } from '../services/api'
 import { toast } from 'react-toastify'
 import { Product } from '../types/product'
+import { Link } from 'react-router-dom'
 
 export function ProductAdmin() {
   const { products, setProducts, loading, error } = useProducts()
@@ -52,6 +53,10 @@ export function ProductAdmin() {
 
   return (
     <div className="p-4 max-w-5xl mx-auto">
+      <nav className="mb-4 text-sm text-gray-600">
+        <Link to="/" className="hover:underline">Home</Link> &gt; 
+        <span className="ml-1">Admin de Produtos</span>
+      </nav>
       <h2 className="text-xl font-bold mb-4">Admin de Produtos</h2>
       <ul className="space-y-2">
         {products.map((product) => (

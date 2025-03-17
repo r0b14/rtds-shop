@@ -36,6 +36,16 @@ export default function Navbar() {
               2
             </span>
           </Link>
+
+          {/* BOTÃO DE ADMIN - VISÍVEL APENAS SE O USUÁRIO ESTIVER LOGADO */}
+          {user && (
+            <Link
+              to="/admin"
+              className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"
+            >
+              Admin
+            </Link>
+          )}
         </div>
       </div>
     </header>

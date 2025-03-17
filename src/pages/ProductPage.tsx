@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ProductImages from "../components/ProductImages";
 import ProductDetails from "../components/ProductDetails";
 import Reviews from "../components/ReviewsSection";
@@ -65,14 +65,30 @@ export default function ProductPage() {
     <>
       <Navbar />
       <main className="max-w-7xl mx-auto flex justify-center items-center flex-col ">
+        {/* Breadcrumb */}
+        <nav className="w-full px-6 py-4 text-sm text-gray-500">
+          <ul className="flex space-x-2">
+            <li>
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link to="/products" className="hover:underline">
+                Produtos
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-gray-700">{product.title}</li>
+          </ul>
+        </nav>
         <div className="container px-6 py-12 grid md:grid-cols-2 gap-12">
           {/* Imagens do Produto */}
-          {/* <ProductImages images={product.images || []} /> */}
           <ProductImage image={product.images[0]} />
           {/* Detalhes do Produto */}
           <ProductDetails product={product} />
         </div>
-
         {/* Seção de Reviews */}
         <Reviews />
       </main>

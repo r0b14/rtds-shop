@@ -9,6 +9,7 @@ import { Product } from "../types/product";
 import Breadcrumb from "../components/Breadcrumb";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
 
 export const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -119,21 +120,7 @@ export const ProductsPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, index) => (
-            <div
-              key={product.id}
-              ref={index === products.length - 1 ? lastProductElementRef : null}
-              className="bg-white p-4 shadow-md rounded-lg"
-            >
-              <img
-                src={product.thumbnail}
-                alt={product.title}
-                className="w-full h-48 object-cover rounded-md mb-4"
-              />
-              <h2 className="text-lg font-semibold text-gray-800">
-                {product.title}
-              </h2>
-              <p className="text-gray-700">Preço: ${product.price}</p>
-            </div>
+            <ProductCard key={index} product={product} />
           ))}
         </div>
       </div>

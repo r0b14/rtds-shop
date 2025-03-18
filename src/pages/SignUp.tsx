@@ -12,7 +12,8 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const navigate = useNavigate();
-
+  
+  //zod
   const schema = z.object({
     firstName: z
       .string()

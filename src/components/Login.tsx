@@ -10,6 +10,7 @@ export default function Login() {
   const { setUser } = useUser();
   const navigate = useNavigate();
 
+  //zod
   const schema = z.object({
     email: z.string().nonempty("Usuário é obrigatório"),
     password: z

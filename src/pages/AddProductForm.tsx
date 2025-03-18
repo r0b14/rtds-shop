@@ -21,6 +21,7 @@ type FormInputs = {
   price: number;
 };
 
+//yup
 export function AddProductForm() {
   const {
     register,

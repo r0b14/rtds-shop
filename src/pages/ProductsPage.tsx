@@ -65,15 +65,22 @@ export const ProductsPage = () => {
     setProducts(results);
   };
 
-  const lastProductElementRef = useCallback((node) => {
-    if (observer.current) observer.current.disconnect();
-    observer.current = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setPage((prevPage) => prevPage + 1);
-      }
-    });
-    if (node) observer.current.observe(node);
-  }, []);
+  //Intersection Observer
+  const lastProductElementRef = useCallback(
+    (node) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !initialLoad) {
+            setPage((prevPage) => prevPage + 1);
+          }
+        },
+        { threshold: 1.0 } // Garante que o elemento esteja completamente visível
+      );
+      if (node) observer.current.observe(node);
+    },
+    [initialLoad] // Adiciona dependência para evitar problemas de estado
+  );
 
   return (
     <>
@@ -119,9 +126,16 @@ export const ProductsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))}
+          {products.map((product, index) => {
+            if (index === products.length - 1) {
+              return (
+                <div ref={lastProductElementRef} key={index}>
+                  <ProductCard product={product} />
+                </div>
+              );
+            }
+            return <ProductCard key={index} product={product} />;
+          })}
         </div>
       </div>
       <Footer />

@@ -6,7 +6,7 @@ import { Product } from '../types/product'
 import { Link } from 'react-router-dom'
 
 export function ProductAdmin() {
-  const { products, setProducts, loading, error } = useProducts()
+  const {products, setProducts, loading, error } = useProducts()
   const [editingId, setEditingId] = useState<number | null>(null)
   const [newTitle, setNewTitle] = useState('')
   const [newPrice, setNewPrice] = useState<number | ''>('')
@@ -14,6 +14,7 @@ export function ProductAdmin() {
   if (loading) return <p>Carregando...</p>
   if (error) return <p>{error}</p>
 
+  // excluindo um produto
   async function handleDelete(id: number) {
     try {
       const deleted = await deleteProduct(id)
@@ -24,12 +25,14 @@ export function ProductAdmin() {
     }
   }
 
+  // editando um produto
   function startEdit(product: Product) {
     setEditingId(product.id)
     setNewTitle(product.title)
     setNewPrice(product.price)
   }
 
+  // editando um produto
   async function handleUpdate(e: React.FormEvent) {
     e.preventDefault()
     if (!editingId) return
